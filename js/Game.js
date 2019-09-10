@@ -17,9 +17,8 @@ class Game {
         }
 
     getRandomPhrase(){
-
-
-        
+        var y = Math.floor(Math.random() * this.phrases.length);
+            return this.phrases[y];
     };
 
 }

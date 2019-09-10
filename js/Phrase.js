@@ -6,8 +6,12 @@
     constructor(phrase){
             this.phrase = phrase.toLowerCase();
 
-
-
     }
+
+    addPhraseToDisplay(){
+
+
+        
+    };
 
   }
