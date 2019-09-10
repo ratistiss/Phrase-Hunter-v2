@@ -6,7 +6,7 @@
     constructor(phrase){
             this.phrase = phrase.toLowerCase();
 
-
+s
 
     }
 
