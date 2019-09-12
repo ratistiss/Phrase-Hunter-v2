@@ -21,4 +21,13 @@ class Game {
             return this.phrases[y];
     };
 
+    startGame(){
+        document.querySelector('#overlay').style.display = 'none';
+        this.getRandomPhrase(phrase);
+        this.addPhraseToDisplay();
+        this.activePhrase = phrase;
+
+
+
+    }
 }
