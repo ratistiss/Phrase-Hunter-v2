@@ -2,32 +2,23 @@
  * Project 4 - OOP Game App
   Phrase.js */
 
-  class Phrase{
-    constructor(phrase){
-            this.phrase = phrase.toLowerCase();
-
-    }
-
-    addPhraseToDisplay(phrase){
-      for( let i = 0; i < this.phrase.length; i++){
-        if (this.phrase.charAt(i).match(/[a-z]/i)){
-         let li = document.createElement('li');
-         li.className = `hide letter ${this.phrase.charAt(i)}`;
-         li.textContent = `${this.phrase.charAt(i)}`;
-         document.querySelector('#phrase').appendChild(li);
-        
-  } else {
-
+class Phrase {
+  constructor(phrase) {
+    this.phrase = phrase.toLowerCase();
+  }
+  addPhraseToDisplay() {
+    for (let i = 0; i < this.phrase.length; i++) {
+      if (this.phrase.charAt(i).match(/[a-z]/i)) {
+        let li = document.createElement('li');
+        li.className = `hide letter ${this.phrase.charAt(i)}`;
+        li.textContent = `${this.phrase.charAt(i)}`;
+        document.querySelector('#phrase').appendChild(li);
+      } else {
         let li = document.createElement('li');
         li.className = "hide space";
         li.textContent = " ";
         document.querySelector('#phrase').appendChild(li);
-
-  }
-
-
-}};
-        
-
-
+      }
+    }
+  };
 }
