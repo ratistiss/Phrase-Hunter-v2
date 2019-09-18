@@ -11,3 +11,12 @@ document.querySelector('button').addEventListener("click", () => {
 });
 
 
+const button2 = document.querySelector("#qwerty");
+
+button2.addEventListener("click", (e) => {
+
+  console.log(e.target.innerText);
+  this.game.handleInteraction(e.target.innerText);
+});
+
+

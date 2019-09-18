@@ -21,4 +21,27 @@ class Phrase {
       }
     }
   };
+
+
+   
+  checkLetter(letter){
+    console.log(this.phrase);
+    if (this.phrase.includes(letter)){
+    return true;
+
+  } else {
+    return false;
+
+  }}
+  
+
+//   showMatchedLetter(letter){
+//     for (let i = 0; i < this.phrase.length; i++) {
+//       if (this.phrase.charAt(i).match(letter)) {
+//         li.className = `show ${this.phrase.charAt(i)}`;
+//         li.textContent = `${this.phrase.charAt(i)}`;
+
+//   }
+// }
+// }
 }
