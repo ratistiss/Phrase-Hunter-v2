@@ -20,7 +20,7 @@ class Phrase {
         document.querySelector('#phrase').appendChild(li);
       }
     }
-  };
+  }
 
 
    
@@ -37,10 +37,11 @@ class Phrase {
 
 //   showMatchedLetter(letter){
 //     for (let i = 0; i < this.phrase.length; i++) {
-//       if (this.phrase.charAt(i).match(letter)) {
-//         li.className = `show ${this.phrase.charAt(i)}`;
+//       if (this.phrase.charAt(i).includes(letter)) {
+//         li.classList.remove = `hide letter ${this.phrase.charAt(i)}`;
+//         li.classList.add = `show letter ${this.phrase.charAt(i)}`;
 //         li.textContent = `${this.phrase.charAt(i)}`;
-
+//         console.log(letter);
 //   }
 // }
 // }

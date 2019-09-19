@@ -27,9 +27,16 @@ class Game {
 
 
     handleInteraction(letter){
+        console.log(letter);
         this.activePhrase.checkLetter(letter);
+        // if(this.activePhrase.checkLetter() === true){
+        //     this.activePhrase.showMatchedLetter();
 
-    }
+
+
+        }
+
+    // }
 
 //     checkForWin(){
 
