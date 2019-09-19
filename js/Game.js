@@ -24,40 +24,28 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
-
-
-    handleInteraction(letter){
+    handleInteraction(letter) {
         console.log(letter);
         this.activePhrase.checkLetter(letter);
-        // if(this.activePhrase.checkLetter() === true){
-        //     this.activePhrase.showMatchedLetter();
-
-
-
+        if (this.activePhrase.checkLetter() === true) {
+            this.activePhrase.showMatchedLetter();
+            console.log(letter);
         }
-
-    // }
-
-//     checkForWin(){
-
-
-//     }
-
-//     removeLife(){
-//         let li = document.querySelector('.tries');
-//         this.missed + 1;
-//         li[this.missed].setAttribute(src, "images/lostHeart.png");
-//     }
-
-//     gameOver(){
-//         document.querySelector('#overlay').style.display = 'block';
-//         let message = document.querySelector('#game-over-message');
-//             if(this.missed = 5){
-//                 message.textContent = 'Sorry, you lost. Losing is learning so keep growing that brain.';
-
-//             } else{
-//                 message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
-//             }
-
-//     }
+    }
+    //     checkForWin(){
+    //     }
+    //     removeLife(){
+    //         let li = document.querySelector('.tries');
+    //         this.missed + 1;
+    //         li[this.missed].setAttribute(src, "images/lostHeart.png");
+    //     }
+    //     gameOver(){
+    //         document.querySelector('#overlay').style.display = 'block';
+    //         let message = document.querySelector('#game-over-message');
+    //             if(this.missed = 5){
+    //                 message.textContent = 'Sorry, you lost. Losing is learning so keep growing that brain.';
+    //             } else{
+    //                 message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
+    //             }
+    //     }
 }

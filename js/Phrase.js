@@ -21,28 +21,22 @@ class Phrase {
       }
     }
   }
-
-
-   
-  checkLetter(letter){
+  checkLetter(letter) {
     console.log(this.phrase);
-    if (this.phrase.includes(letter)){
-    return true;
-
-  } else {
-    return false;
-
-  }}
-  
-
-//   showMatchedLetter(letter){
-//     for (let i = 0; i < this.phrase.length; i++) {
-//       if (this.phrase.charAt(i).includes(letter)) {
-//         li.classList.remove = `hide letter ${this.phrase.charAt(i)}`;
-//         li.classList.add = `show letter ${this.phrase.charAt(i)}`;
-//         li.textContent = `${this.phrase.charAt(i)}`;
-//         console.log(letter);
-//   }
-// }
-// }
+    if (this.phrase.includes(letter)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  showMatchedLetter(letter) {
+    for (let i = 0; i < this.phrase.length; i++) {
+      if (this.phrase.charAt(i).includes(letter)) {
+        li.classList.remove = `hide letter ${this.phrase.charAt(i)}`;
+        li.classList.add = `show letter ${this.phrase.charAt(i)}`;
+        li.textContent = `${this.phrase.charAt(i)}`;
+        console.log(letter);
+      }
+    }
+  }
 }
