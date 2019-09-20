@@ -12,31 +12,30 @@ class Phrase {
         let li = document.createElement('li');
         li.className = `hide letter ${this.phrase.charAt(i)}`;
         li.textContent = `${this.phrase.charAt(i)}`;
-        document.querySelector('#phrase').appendChild(li);
+        document.querySelector('ul').appendChild(li);
       } else {
         let li = document.createElement('li');
-        li.className = "hide space";
+        li.className = "space";
         li.textContent = " ";
-        document.querySelector('#phrase').appendChild(li);
+        document.querySelector('ul').appendChild(li);
       }
     }
   }
   checkLetter(letter) {
-    console.log(this.phrase);
     if (this.phrase.includes(letter)) {
+      
       return true;
     } else {
       return false;
     }
   }
   showMatchedLetter(letter) {
-    for (let i = 0; i < this.phrase.length; i++) {
-      if (this.phrase.charAt(i).includes(letter)) {
-        li.classList.remove = `hide letter ${this.phrase.charAt(i)}`;
-        li.classList.add = `show letter ${this.phrase.charAt(i)}`;
-        li.textContent = `${this.phrase.charAt(i)}`;
-        console.log(letter);
+    const matchedElements = document.getElementsByClassName(letter);
+    console.log(letter);
+      for (let li of matchedElements) {
+        li.className = li.className.replace(/hide/, 'show');
       }
     }
-  }
+    
+  
 }
