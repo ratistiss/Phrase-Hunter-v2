@@ -31,7 +31,6 @@ class Phrase {
   }
   showMatchedLetter(letter) {
     const matchedElements = document.getElementsByClassName(letter);
-    console.log(letter);
       for (let li of matchedElements) {
         li.className = li.className.replace(/hide/, 'show');
       }

@@ -25,14 +25,11 @@ class Game {
         this.activePhrase.addPhraseToDisplay();
     }
     handleInteraction(letter) {
-        this.activePhrase.checkLetter(letter);
+            this.activePhrase.checkLetter(letter);
         if (true) {
             this.activePhrase.showMatchedLetter(letter);
-            console.log(letter);
+            
         } else {
-        //     this.missed.removeLife();
-
-                return false;
 
 
         }
@@ -40,18 +37,26 @@ class Game {
     }
     //     checkForWin(){
     //     }
-    //     removeLife(){
-    //         let li = document.querySelector('.tries');
-    //         this.missed + 1;
-    //         li[this.missed].setAttribute(src, "images/lostHeart.png");
-    //     }
-    //     gameOver(){
-    //         document.querySelector('#overlay').style.display = 'block';
-    //         let message = document.querySelector('#game-over-message');
-    //             if(this.missed = 5){
-    //                 message.textContent = 'Sorry, you lost. Losing is learning so keep growing that brain.';
-    //             } else{
-    //                 message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
-    //             }
-    //     }
+        removeLife(){
+            this.missed += 1;
+            
+            let tries = document.querySelector('.tries');
+            for(let x = 0; x < this.missed; x++){
+            
+            tries.className = tries.className.replace(/tries/g, "tried");
+            
+            let imgTried = document.querySelectorAll('li.tried img');
+        
+            imgTried[x].src = "images/lostHeart.png";
+        }
+        }
+        gameOver(){
+            document.querySelector('#overlay').style.display = 'block';
+            let message = document.querySelector('#game-over-message');
+                if(this.missed = 5){
+                    message.textContent = 'Sorry, you lost. Losing is learning so keep growing that brain.';
+                } else{
+                    message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
+                }
+        }
 }
