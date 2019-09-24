@@ -11,9 +11,10 @@ button.addEventListener("click", () => {
 
 
 let letter = null;
-let button2 = document.querySelectorAll("#qwerty .keyrow button");
-button2.addEventListener("click", (e) => {
+const target = document.querySelectorAll(".keyrow .key");
+for (var i = 0; i < target.length; i++) {
+  target[i].addEventListener('click', (e) => {
   letter = e.target.innerText;
   game.handleInteraction(e.target);
-});
+})};
 
