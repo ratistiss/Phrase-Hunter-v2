@@ -24,54 +24,51 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
-    handleInteraction(button) {
-            console.log(button)
-            this.activePhrase.checkLetter(button);
-        if (true) {
-            this.activePhrase.showMatchedLetter(button);
-            
-        } else {
-
-
+    handleInteraction(letter) {
+           letter.disabled = true;
+        if (this.activePhrase.checkLetter(letter)) {
+            this.activePhrase.showMatchedLetter(letter);
+            letter.classList.add("chosen");
+            if(this.checkForWin(true)){
+                this.gameOver();
+            }
+            } else { 
+            letter.classList.add("wrong");
+            this.removeLife();
         }
-        
     }
-        checkForWin(){
-            
-            let letterClass = document.querySelectorAll('.letter').length;
-            let showClass = document.querySelectorAll('.show').length;
-            
-                if (letterClass === showClass){
-                   return true;
-            } else{
-              return false;
-        }}
-    
-
-        removeLife(){
-            this.missed += 1;
-            let tries = document.querySelector('.tries');
-            for(let x = 0; x < this.missed; x++){
+    checkForWin() {
+        let letterClass = document.querySelectorAll('.letter').length;
+        let showClass = document.querySelectorAll('.show').length;
+        if (letterClass === showClass) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    removeLife() {
+        this.missed += 1;
+        let tries = document.querySelector('.tries');
+        for (let x = 0; x < this.missed; x++) {
             tries.className = tries.className.replace(/tries/g, "tried");
             let imgTried = document.querySelectorAll('li.tried img');
             imgTried[x].src = "images/lostHeart.png";
-            if(this.missed === 5){
+            if (this.missed === 5) {
                 this.gameOver();
-
             }
         }
+    }
+    gameOver(gameWon) {
+        document.querySelector('#overlay').style.display = 'block';
+        let message = document.querySelector('#game-over-message');
+        if (this.missed === 5) {
+            document.querySelector('#overlay').classList.add("lose");
+            document.querySelector('#overlay').classList.remove('win');
+            message.textContent = 'Sorry, you lost. Losing is learning so keep growing that brain.';
+        } else {
+            document.querySelector('#overlay').classList.remove('lose');
+            document.querySelector('#overlay').classList.add('win');
+            message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
         }
-        gameOver(gameWon){
-            document.querySelector('#overlay').style.display = 'block';
-            let message = document.querySelector('#game-over-message');
-                if(this.missed === 5){
-                    document.querySelector('#overlay').classList.add("lose");
-                    document.querySelector('#overlay').classList.remove('win');
-                    message.textContent = 'Sorry, you lost. Losing is learning so keep growing that brain.';
-                } else {
-                    document.querySelector('#overlay').classList.remove('lose');
-                    document.querySelector('#overlay').classList.add('win');
-                    message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
-                }
-        }
+    }
 }

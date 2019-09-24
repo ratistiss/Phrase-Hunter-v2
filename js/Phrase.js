@@ -23,7 +23,6 @@ class Phrase {
   }
   checkLetter(letter) {
     if (this.phrase.includes(letter)) {
-      
       return true;
     } else {
       return false;
@@ -31,10 +30,7 @@ class Phrase {
   }
   showMatchedLetter(letter) {
     const matchedElements = document.getElementsByClassName(letter);
-      for (let li of matchedElements) {
-        li.className = li.className.replace(/hide/, 'show');
-      }
+    for (let li of matchedElements) {
+      li.className = li.className.replace(/hide/, 'show');
     }
-    
-  
-}
+  }}
