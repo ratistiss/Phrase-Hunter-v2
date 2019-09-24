@@ -24,16 +24,17 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
-    handleInteraction(letter) {
-           letter.disabled = true;
+    handleInteraction(button) {
+        console.log(this.activePhrase.checkLetter(letter));
+           button.disabled = true;
         if (this.activePhrase.checkLetter(letter)) {
             this.activePhrase.showMatchedLetter(letter);
-            letter.classList.add("chosen");
+            button.classList.add("chosen");
             if(this.checkForWin(true)){
                 this.gameOver();
             }
             } else { 
-            letter.classList.add("wrong");
+            button.classList.add("wrong");
             this.removeLife();
         }
     }
