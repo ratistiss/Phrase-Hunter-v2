@@ -71,5 +71,22 @@ class Game {
             document.querySelector('#overlay').classList.add('win');
             message.textContent = ' You Won, do a dance becuz while you play these games computers are taking over the World.';
         }
+        this.activePhrase = ''
+        let matchedLetters =document.querySelectorAll('#phrase ul li');
+        for(let li of matchedLetters){
+            li.remove();
+        }
+        let key =document.querySelectorAll('.key');
+        for(let matchedKey of key){
+        matchedKey.disabled = false;
+        matchedKey.classList.remove('chosen');
+        matchedKey.classList.remove('wrong');
     }
-}
+    
+        let liveHeart = document.querySelectorAll(".tried");
+        for(let x = 0; x < 6; x++){
+         liveHeart[x].classList.remove('tried');
+         liveHeart[x].classList.add('tries');
+        let imgTries = document.querySelectorAll('li.tries img');
+        imgTries[x].src = "images/liveHeart.png";
+}}}
